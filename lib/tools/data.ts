@@ -1,0 +1,1436 @@
+import type { Tool } from '../types'
+
+/**
+ * Master tool registry.
+ *
+ * Adding a new tool = add one entry here + register its interactive component
+ * in components/tools/registry.tsx. Navigation, category pages, search,
+ * sitemaps and SEO are all generated automatically from this data.
+ */
+export const tools: Tool[] = [
+  {
+    slug: 'age-calculator',
+    name: 'Age Calculator',
+    title: 'Age Calculator',
+    description:
+      'Calculate your exact age in years, months, and days from your date of birth.',
+    shortDescription: 'Find your exact age in years, months, and days.',
+    category: 'calculators',
+    keywords: ['age calculator', 'date of birth', 'how old am i', 'age in days'],
+    icon: 'CalendarClock',
+    featured: true,
+    popular: true,
+    relatedTools: ['timestamp-converter', 'percentage-calculator'],
+    metaTitle: 'Age Calculator â€” Find Your Exact Age Online (Free)',
+    metaDescription:
+      'Calculate your exact age in years, months, days, and total days from your date of birth. Free, instant, and private.',
+    faq: [
+      {
+        question: 'How is my age calculated?',
+        answer:
+          'We compare your date of birth with the target date and break the difference down into full years, remaining months, and remaining days.',
+      },
+      {
+        question: 'Is my birth date stored anywhere?',
+        answer: 'No. Everything is calculated in your browser and never sent to a server.',
+      },
+      {
+        question: 'Can I calculate age at a future or past date?',
+        answer: 'Yes. Change the "age at" date to calculate your age on any date.',
+      },
+    ],
+    content: {
+      what: 'An Age Calculator determines exactly how old you are based on your date of birth. Instead of a rough number of years, it gives you a precise breakdown in years, months, and days.',
+      how: 'The tool takes your date of birth and a target date (today by default), then computes the calendar difference. It correctly accounts for varying month lengths and leap years.',
+      steps: [
+        'Enter your date of birth.',
+        'Optionally change the "age at" date.',
+        'View your exact age instantly.',
+      ],
+      examples: [
+        'Someone born on 1990-06-15 is over 35 years old in 2026.',
+        'Calculate how many days until a milestone birthday.',
+      ],
+      uses: [
+        'Filling in forms that require exact age',
+        'Planning birthdays and anniversaries',
+        'Verifying eligibility by age',
+      ],
+      tips: [
+        'Use the "age at" field to see your age on a specific past or future date.',
+      ],
+    },
+  },
+  {
+    slug: 'percentage-calculator',
+    name: 'Percentage Calculator',
+    title: 'Percentage Calculator',
+    description:
+      'Calculate percentages, percentage change, and what percent one number is of another.',
+    shortDescription: 'Work out percentages, increases, and decreases.',
+    category: 'calculators',
+    keywords: ['percentage calculator', 'percent change', 'percent of', 'discount'],
+    icon: 'Percent',
+    popular: true,
+    relatedTools: ['loan-calculator', 'age-calculator'],
+    metaTitle: 'Percentage Calculator â€” Calculate Percent Online (Free)',
+    metaDescription:
+      'Calculate what percent one number is of another, find a percentage of a value, and compute percentage increase or decrease. Free and instant.',
+    faq: [
+      {
+        question: 'How do I calculate what percent one number is of another?',
+        answer:
+          'Divide the part by the whole and multiply by 100. This tool does it instantly for you.',
+      },
+      {
+        question: 'Can it calculate percentage increase and decrease?',
+        answer: 'Yes. Enter the original and new values to get the percentage change.',
+      },
+    ],
+    content: {
+      what: 'A Percentage Calculator helps you solve the most common percentage problems: finding a percentage of a number, working out what percent one number is of another, and computing percentage change.',
+      how: 'Each mode applies the standard percentage formula. For example, X% of Y equals (X أ· 100) أ— Y.',
+      steps: [
+        'Pick the calculation mode you need.',
+        'Enter your numbers.',
+        'Read the result instantly.',
+      ],
+      examples: ['20% of 150 is 30.', 'Going from 80 to 100 is a 25% increase.'],
+      uses: ['Discounts and sales', 'Tips and taxes', 'Grades and statistics'],
+      tips: ['Use percentage change to compare growth between two values.'],
+    },
+  },
+  {
+    slug: 'bmi-calculator',
+    name: 'BMI Calculator',
+    title: 'BMI Calculator',
+    description:
+      'Calculate your Body Mass Index (BMI) using metric or imperial units and see your weight category.',
+    shortDescription: 'Calculate your Body Mass Index and category.',
+    category: 'health-tools',
+    keywords: ['bmi calculator', 'body mass index', 'healthy weight', 'bmi chart'],
+    icon: 'HeartPulse',
+    popular: true,
+    relatedTools: ['age-calculator', 'percentage-calculator'],
+    metaTitle: 'BMI Calculator â€” Body Mass Index (Metric & Imperial)',
+    metaDescription:
+      'Calculate your Body Mass Index (BMI) with metric or imperial units and instantly see your weight category. Free and private.',
+    faq: [
+      {
+        question: 'What is a healthy BMI range?',
+        answer:
+          'A BMI between 18.5 and 24.9 is generally considered a healthy range for most adults.',
+      },
+      {
+        question: 'Is BMI accurate for everyone?',
+        answer:
+          'BMI is a useful general indicator but does not account for muscle mass, age, or body composition. Consult a professional for personal advice.',
+      },
+    ],
+    content: {
+      what: 'BMI (Body Mass Index) is a simple measure that uses your height and weight to estimate whether you are in a healthy weight range.',
+      how: 'BMI is calculated as weight in kilograms divided by height in meters squared. This tool converts imperial units for you automatically.',
+      steps: [
+        'Choose metric or imperial units.',
+        'Enter your height and weight.',
+        'View your BMI and category.',
+      ],
+      uses: ['Tracking general fitness', 'Understanding health screenings'],
+      tips: ['BMI is a screening tool, not a diagnosis â€” use it as a starting point.'],
+    },
+  },
+  {
+    slug: 'word-counter',
+    name: 'Word Counter',
+    title: 'Word Counter',
+    description:
+      'Count words, characters, sentences, and paragraphs in your text as you type.',
+    shortDescription: 'Count words, sentences, and reading time.',
+    category: 'text-tools',
+    keywords: ['word counter', 'word count', 'count words', 'essay word count'],
+    icon: 'Type',
+    featured: true,
+    popular: true,
+    relatedTools: ['character-counter', 'text-case-converter', 'lorem-ipsum-generator'],
+    metaTitle: 'Word Counter â€” Count Words & Characters Online (Free)',
+    metaDescription:
+      'Count words, characters, sentences, paragraphs, and estimated reading time as you type. Free, instant, and private word counter.',
+    faq: [
+      {
+        question: 'Does it count in real time?',
+        answer: 'Yes, all counts update instantly as you type or paste text.',
+      },
+      {
+        question: 'How is reading time estimated?',
+        answer: 'Reading time assumes an average reading speed of about 200 words per minute.',
+      },
+    ],
+    content: {
+      what: 'A Word Counter tallies the words, characters, sentences, and paragraphs in a piece of text and estimates how long it takes to read.',
+      how: 'The tool splits your text on whitespace and punctuation to count words and sentences, and measures character length with and without spaces.',
+      steps: ['Type or paste your text.', 'Watch the live statistics update.'],
+      uses: ['Meeting essay or article length requirements', 'Checking social media limits'],
+      tips: ['Great for keeping SEO meta descriptions within the ideal length.'],
+    },
+  },
+  {
+    slug: 'character-counter',
+    name: 'Character Counter',
+    title: 'Character Counter',
+    description:
+      'Count characters with and without spaces, plus words and lines, in real time.',
+    shortDescription: 'Count characters with and without spaces.',
+    category: 'text-tools',
+    keywords: ['character counter', 'character count', 'letter count', 'text length'],
+    icon: 'Hash',
+    relatedTools: ['word-counter', 'text-case-converter'],
+    metaTitle: 'Character Counter â€” Count Characters Online (Free)',
+    metaDescription:
+      'Count characters with and without spaces, plus words and lines, instantly as you type. Perfect for tweets, bios, and meta tags.',
+    faq: [
+      {
+        question: 'Does it count spaces?',
+        answer: 'It shows both totals â€” characters including spaces and excluding spaces.',
+      },
+    ],
+    content: {
+      what: 'A Character Counter tells you exactly how many characters your text contains, which is essential for platforms with strict limits.',
+      how: 'The tool measures the length of your text and separately counts the non-space characters.',
+      steps: ['Type or paste text.', 'Read the character totals instantly.'],
+      uses: ['Twitter/X posts', 'Meta titles and descriptions', 'SMS messages'],
+      tips: ['Keep meta titles under ~60 characters for best search display.'],
+    },
+  },
+  {
+    slug: 'password-generator',
+    name: 'Password Generator',
+    title: 'Password Generator',
+    description:
+      'Generate strong, random, secure passwords with customizable length and character types.',
+    shortDescription: 'Create strong, secure random passwords.',
+    category: 'generators',
+    keywords: ['password generator', 'strong password', 'random password', 'secure password'],
+    icon: 'KeyRound',
+    featured: true,
+    popular: true,
+    relatedTools: ['random-number-generator', 'uuid-generator'],
+    metaTitle: 'Password Generator â€” Create Strong Passwords (Free)',
+    metaDescription:
+      'Generate strong, random, and secure passwords with custom length and character options. Runs entirely in your browser.',
+    faq: [
+      {
+        question: 'Are the generated passwords secure?',
+        answer:
+          'Yes. Passwords are generated locally using your browserâ€™s cryptographically secure random number generator.',
+      },
+      {
+        question: 'Do you store the passwords?',
+        answer: 'Never. Nothing leaves your device.',
+      },
+    ],
+    content: {
+      what: 'A Password Generator creates strong, unpredictable passwords that are far harder to crack than ones you make up yourself.',
+      how: 'It uses the Web Crypto API to pick random characters from the character sets you enable.',
+      steps: [
+        'Choose a length and character types.',
+        'Click generate.',
+        'Copy your new password.',
+      ],
+      uses: ['New account sign-ups', 'Rotating old passwords', 'Wi-Fi and device passwords'],
+      tips: ['Use at least 16 characters and store passwords in a password manager.'],
+    },
+  },
+  {
+    slug: 'random-number-generator',
+    name: 'Random Number Generator',
+    title: 'Random Number Generator',
+    description:
+      'Generate random numbers within a range, with options for count and uniqueness.',
+    shortDescription: 'Generate random numbers in any range.',
+    category: 'generators',
+    keywords: ['random number generator', 'rng', 'random picker', 'dice'],
+    icon: 'Dices',
+    relatedTools: ['password-generator', 'uuid-generator'],
+    metaTitle: 'Random Number Generator â€” Pick Random Numbers (Free)',
+    metaDescription:
+      'Generate one or many random numbers within a custom range, with optional unique results. Fast and private.',
+    faq: [
+      {
+        question: 'Can I generate unique numbers only?',
+        answer: 'Yes, enable the unique option to avoid repeated numbers in a draw.',
+      },
+    ],
+    content: {
+      what: 'A Random Number Generator produces random numbers between a minimum and maximum you choose.',
+      how: 'Numbers are generated with the browserâ€™s secure random source and scaled into your range.',
+      steps: ['Set the min, max, and how many numbers.', 'Generate and copy the results.'],
+      uses: ['Raffles and giveaways', 'Games and dice rolls', 'Sampling and testing'],
+      tips: ['Turn on "unique" for lottery-style draws where numbers cannot repeat.'],
+    },
+  },
+  {
+    slug: 'text-case-converter',
+    name: 'Text Case Converter',
+    title: 'Text Case Converter',
+    description:
+      'Convert text between UPPERCASE, lowercase, Title Case, Sentence case, and more.',
+    shortDescription: 'Convert text to upper, lower, title, and more.',
+    category: 'text-tools',
+    keywords: ['text case converter', 'uppercase', 'lowercase', 'title case', 'sentence case'],
+    icon: 'CaseSensitive',
+    popular: true,
+    relatedTools: ['word-counter', 'character-counter'],
+    metaTitle: 'Text Case Converter â€” Change Text Case Online (Free)',
+    metaDescription:
+      'Instantly convert text to UPPERCASE, lowercase, Title Case, Sentence case, camelCase, and more. Free and private.',
+    faq: [
+      {
+        question: 'Which cases are supported?',
+        answer:
+          'UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and kebab-case.',
+      },
+    ],
+    content: {
+      what: 'A Text Case Converter rewrites your text into a different letter-casing style without you retyping anything.',
+      how: 'The tool applies rules for each case style â€” capitalizing, lowercasing, or reformatting words and separators.',
+      steps: ['Paste your text.', 'Choose a case style.', 'Copy the converted text.'],
+      uses: ['Fixing accidental caps lock', 'Formatting headings', 'Preparing variable names'],
+      tips: ['camelCase and snake_case are handy for developers naming variables.'],
+    },
+  },
+  {
+    slug: 'base64-encoder',
+    name: 'Base64 Encoder',
+    title: 'Base64 Encoder',
+    description: 'Encode text or data into Base64 format instantly in your browser.',
+    shortDescription: 'Encode text to Base64.',
+    category: 'developer-tools',
+    keywords: ['base64 encoder', 'encode base64', 'base64', 'text to base64'],
+    icon: 'Binary',
+    relatedTools: ['base64-decoder', 'url-encoder', 'json-formatter'],
+    metaTitle: 'Base64 Encoder â€” Encode Text to Base64 Online (Free)',
+    metaDescription:
+      'Encode text or UTF-8 data to Base64 instantly and privately in your browser. Free developer tool.',
+    faq: [
+      {
+        question: 'Does it support Unicode?',
+        answer: 'Yes, text is encoded as UTF-8 before Base64 encoding, so emojis and accents work.',
+      },
+    ],
+    content: {
+      what: 'Base64 encoding converts binary or text data into an ASCII string, commonly used to safely transmit data in URLs, JSON, and data URIs.',
+      how: 'The tool UTF-8 encodes your input and converts it to a Base64 string entirely in the browser.',
+      steps: ['Paste your text.', 'Copy the Base64 output.'],
+      uses: ['Embedding images as data URIs', 'Encoding tokens', 'Debugging APIs'],
+      tips: ['Base64 is encoding, not encryption â€” it does not secure sensitive data.'],
+    },
+  },
+  {
+    slug: 'base64-decoder',
+    name: 'Base64 Decoder',
+    title: 'Base64 Decoder',
+    description: 'Decode Base64 strings back into readable text instantly.',
+    shortDescription: 'Decode Base64 back to text.',
+    category: 'developer-tools',
+    keywords: ['base64 decoder', 'decode base64', 'base64 to text'],
+    icon: 'Binary',
+    relatedTools: ['base64-encoder', 'url-decoder', 'json-formatter'],
+    metaTitle: 'Base64 Decoder â€” Decode Base64 to Text Online (Free)',
+    metaDescription:
+      'Decode Base64 strings back into readable UTF-8 text instantly and privately in your browser. Free developer tool.',
+    faq: [
+      {
+        question: 'What if my Base64 is invalid?',
+        answer: 'The tool will show a clear error message if the input is not valid Base64.',
+      },
+    ],
+    content: {
+      what: 'A Base64 Decoder converts a Base64-encoded string back into its original text.',
+      how: 'The tool decodes the Base64 to bytes and interprets them as UTF-8 text.',
+      steps: ['Paste your Base64 string.', 'Copy the decoded text.'],
+      uses: ['Reading encoded API responses', 'Inspecting JWT payloads', 'Debugging'],
+      tips: ['Whitespace and line breaks in the input are ignored automatically.'],
+    },
+  },
+  {
+    slug: 'url-encoder',
+    name: 'URL Encoder',
+    title: 'URL Encoder',
+    description: 'Percent-encode text so it can be safely used in URLs and query strings.',
+    shortDescription: 'Percent-encode text for URLs.',
+    category: 'developer-tools',
+    keywords: ['url encoder', 'percent encoding', 'encode url', 'uri encode'],
+    icon: 'Link',
+    relatedTools: ['url-decoder', 'base64-encoder'],
+    metaTitle: 'URL Encoder â€” Percent-Encode Text Online (Free)',
+    metaDescription:
+      'Encode text into a URL-safe percent-encoded string instantly. Free and private developer tool.',
+    faq: [
+      {
+        question: 'What is the difference between encodeURI and encodeURIComponent?',
+        answer:
+          'This tool uses component encoding, which escapes characters like & and ? so values are safe inside query strings.',
+      },
+    ],
+    content: {
+      what: 'URL encoding replaces unsafe characters with percent-encoded equivalents so text can be placed in a URL without breaking it.',
+      how: 'The tool applies encodeURIComponent to your input in the browser.',
+      steps: ['Paste your text.', 'Copy the URL-encoded output.'],
+      uses: ['Building query strings', 'Encoding search terms', 'API request parameters'],
+      tips: ['Use this for individual query values, not full URLs.'],
+    },
+  },
+  {
+    slug: 'url-decoder',
+    name: 'URL Decoder',
+    title: 'URL Decoder',
+    description: 'Decode percent-encoded URL strings back into readable text.',
+    shortDescription: 'Decode percent-encoded URLs.',
+    category: 'developer-tools',
+    keywords: ['url decoder', 'decode url', 'percent decoding', 'uri decode'],
+    icon: 'Link2',
+    relatedTools: ['url-encoder', 'base64-decoder'],
+    metaTitle: 'URL Decoder â€” Decode Percent-Encoded URLs (Free)',
+    metaDescription:
+      'Decode percent-encoded URL strings back into human-readable text instantly and privately. Free developer tool.',
+    faq: [
+      {
+        question: 'Can it decode a full URL?',
+        answer: 'Yes, it decodes percent-encoded sequences anywhere in the input string.',
+      },
+    ],
+    content: {
+      what: 'A URL Decoder reverses percent-encoding, turning sequences like %20 back into readable characters such as spaces.',
+      how: 'The tool applies decodeURIComponent to your input in the browser.',
+      steps: ['Paste the encoded URL or value.', 'Copy the decoded text.'],
+      uses: ['Reading tracking links', 'Debugging query strings', 'Inspecting redirects'],
+      tips: ['If decoding fails, the string may be double-encoded â€” decode it twice.'],
+    },
+  },
+  {
+    slug: 'json-formatter',
+    name: 'JSON Formatter',
+    title: 'JSON Formatter & Beautifier',
+    description: 'Format, beautify, and minify JSON with syntax validation.',
+    shortDescription: 'Beautify and minify JSON instantly.',
+    category: 'developer-tools',
+    keywords: ['json formatter', 'json beautifier', 'format json', 'pretty print json'],
+    icon: 'Braces',
+    featured: true,
+    popular: true,
+    relatedTools: ['json-validator', 'base64-encoder', 'uuid-generator'],
+    metaTitle: 'JSON Formatter â€” Beautify & Minify JSON Online (Free)',
+    metaDescription:
+      'Format, beautify, and minify JSON with instant validation. Free, fast, and private JSON formatter for developers.',
+    faq: [
+      {
+        question: 'Does it validate the JSON?',
+        answer: 'Yes. Invalid JSON shows a clear error message with the reason.',
+      },
+      {
+        question: 'Can I minify JSON too?',
+        answer: 'Yes, switch to minify mode to remove all whitespace.',
+      },
+    ],
+    content: {
+      what: 'A JSON Formatter takes raw JSON and reformats it with consistent indentation so it is easy to read, or minifies it for compact storage.',
+      how: 'The tool parses your JSON to verify it is valid, then re-serializes it with the indentation you choose.',
+      steps: ['Paste your JSON.', 'Choose beautify or minify.', 'Copy the formatted result.'],
+      uses: ['Debugging API responses', 'Cleaning up config files', 'Preparing sample data'],
+      tips: ['If you get an error, check for trailing commas and unquoted keys.'],
+    },
+  },
+  {
+    slug: 'json-validator',
+    name: 'JSON Validator',
+    title: 'JSON Validator',
+    description: 'Validate JSON syntax and get clear, human-readable error messages.',
+    shortDescription: 'Check if your JSON is valid.',
+    category: 'developer-tools',
+    keywords: ['json validator', 'validate json', 'json syntax checker', 'json lint'],
+    icon: 'CircleCheck',
+    relatedTools: ['json-formatter', 'base64-decoder'],
+    metaTitle: 'JSON Validator â€” Validate JSON Syntax Online (Free)',
+    metaDescription:
+      'Validate JSON and get clear error messages pinpointing syntax problems. Free, instant, and private.',
+    faq: [
+      {
+        question: 'What does it check?',
+        answer: 'It verifies that your input is syntactically valid JSON and reports the first error.',
+      },
+    ],
+    content: {
+      what: 'A JSON Validator checks whether a block of text is valid JSON and explains what is wrong when it is not.',
+      how: 'The tool attempts to parse your input and surfaces any parsing error in plain language.',
+      steps: ['Paste your JSON.', 'See instant valid/invalid feedback.'],
+      uses: ['Verifying config files', 'Checking API payloads', 'Learning JSON syntax'],
+      tips: ['JSON keys must use double quotes â€” single quotes are invalid.'],
+    },
+  },
+  {
+    slug: 'uuid-generator',
+    name: 'UUID Generator',
+    title: 'UUID Generator',
+    description: 'Generate random RFC 4122 version 4 UUIDs, one or many at a time.',
+    shortDescription: 'Generate v4 UUIDs instantly.',
+    category: 'generators',
+    keywords: ['uuid generator', 'guid generator', 'uuid v4', 'unique id'],
+    icon: 'Fingerprint',
+    relatedTools: ['password-generator', 'random-number-generator'],
+    metaTitle: 'UUID Generator â€” Create v4 UUIDs Online (Free)',
+    metaDescription:
+      'Generate random RFC 4122 version 4 UUIDs individually or in bulk. Free, fast, and private.',
+    faq: [
+      {
+        question: 'What version of UUID is generated?',
+        answer: 'Version 4 (random) UUIDs, generated with your browserâ€™s secure random source.',
+      },
+    ],
+    content: {
+      what: 'A UUID Generator creates universally unique identifiers â€” 128-bit values used to identify records without coordination.',
+      how: 'The tool uses crypto.randomUUID() to produce standards-compliant version 4 UUIDs.',
+      steps: ['Choose how many UUIDs you need.', 'Generate and copy them.'],
+      uses: ['Database primary keys', 'API request IDs', 'File and object naming'],
+      tips: ['v4 UUIDs are random, so collisions are astronomically unlikely.'],
+    },
+  },
+  {
+    slug: 'lorem-ipsum-generator',
+    name: 'Lorem Ipsum Generator',
+    title: 'Lorem Ipsum Generator',
+    description: 'Generate placeholder Lorem Ipsum text by paragraphs, sentences, or words.',
+    shortDescription: 'Generate placeholder Lorem Ipsum text.',
+    category: 'generators',
+    keywords: ['lorem ipsum generator', 'placeholder text', 'dummy text', 'filler text'],
+    icon: 'AlignLeft',
+    relatedTools: ['word-counter', 'text-case-converter'],
+    metaTitle: 'Lorem Ipsum Generator â€” Placeholder Text Online (Free)',
+    metaDescription:
+      'Generate Lorem Ipsum placeholder text by paragraphs, sentences, or words for mockups and designs. Free and instant.',
+    faq: [
+      {
+        question: 'What is Lorem Ipsum?',
+        answer:
+          'Lorem Ipsum is scrambled Latin-like placeholder text used in design to focus on layout rather than content.',
+      },
+    ],
+    content: {
+      what: 'A Lorem Ipsum Generator produces placeholder text to fill designs and mockups before real content is ready.',
+      how: 'The tool assembles classic Lorem Ipsum words into the number of paragraphs, sentences, or words you request.',
+      steps: ['Pick the amount and unit.', 'Generate and copy the text.'],
+      uses: ['Web and app mockups', 'Print layouts', 'Typography testing'],
+      tips: ['Start with the traditional "Lorem ipsum dolor sit amet" opening for realism.'],
+    },
+  },
+  {
+    slug: 'color-converter',
+    name: 'Color Converter',
+    title: 'Color Converter',
+    description: 'Convert colors between HEX, RGB, and HSL formats with a live preview.',
+    shortDescription: 'Convert HEX, RGB, and HSL colors.',
+    category: 'converters',
+    keywords: ['color converter', 'hex to rgb', 'rgb to hex', 'hsl converter'],
+    icon: 'Palette',
+    popular: true,
+    relatedTools: ['qr-code-generator', 'base64-encoder'],
+    metaTitle: 'Color Converter â€” HEX, RGB & HSL Online (Free)',
+    metaDescription:
+      'Convert colors between HEX, RGB, and HSL with a live preview. Free, instant, and private color tool.',
+    faq: [
+      {
+        question: 'Which formats are supported?',
+        answer: 'HEX, RGB, and HSL, with instant two-way conversion and a color preview.',
+      },
+    ],
+    content: {
+      what: 'A Color Converter translates a color between the common web formats: HEX, RGB, and HSL.',
+      how: 'The tool parses your input color and recalculates the equivalent values in every other format.',
+      steps: ['Pick a color or enter a value.', 'Read the converted formats.'],
+      uses: ['Web design and CSS', 'Matching brand colors', 'Building palettes'],
+      tips: ['HSL makes it easy to create lighter or darker shades of the same hue.'],
+    },
+  },
+  {
+    slug: 'timestamp-converter',
+    name: 'Timestamp Converter',
+    title: 'Unix Timestamp Converter',
+    description: 'Convert Unix timestamps to human-readable dates and back.',
+    shortDescription: 'Convert Unix time to dates and back.',
+    category: 'converters',
+    keywords: ['timestamp converter', 'unix timestamp', 'epoch converter', 'unix time'],
+    icon: 'Clock',
+    relatedTools: ['age-calculator', 'color-converter'],
+    metaTitle: 'Unix Timestamp Converter â€” Epoch to Date (Free)',
+    metaDescription:
+      'Convert Unix timestamps (epoch) to human-readable dates and convert dates back to timestamps. Free and instant.',
+    faq: [
+      {
+        question: 'Does it support seconds and milliseconds?',
+        answer: 'Yes, it detects and converts both second and millisecond timestamps.',
+      },
+    ],
+    content: {
+      what: 'A Timestamp Converter turns a Unix epoch timestamp into a readable date and time, and converts dates back into timestamps.',
+      how: 'The tool interprets the number as seconds or milliseconds since 1970-01-01 UTC and formats it in your local and UTC time.',
+      steps: ['Enter a timestamp or pick a date.', 'Read the converted value.'],
+      uses: ['Debugging logs', 'Working with APIs', 'Scheduling events'],
+      tips: ['Unix time counts seconds since January 1, 1970 UTC (the epoch).'],
+    },
+  },
+  {
+    slug: 'qr-code-generator',
+    name: 'QR Code Generator',
+    title: 'QR Code Generator',
+    description: 'Create a downloadable QR code from any text, URL, or contact info.',
+    shortDescription: 'Turn text or links into a QR code.',
+    category: 'generators',
+    keywords: ['qr code generator', 'create qr code', 'url to qr', 'qr code download'],
+    icon: 'QrCode',
+    featured: true,
+    popular: true,
+    relatedTools: ['url-encoder', 'password-generator'],
+    metaTitle: 'QR Code Generator â€” Create & Download QR Codes (Free)',
+    metaDescription:
+      'Generate a QR code from any text or URL and download it as a PNG. Free, instant, and private â€” no watermark.',
+    faq: [
+      {
+        question: 'Can I download the QR code?',
+        answer: 'Yes, you can download it as a high-resolution PNG image.',
+      },
+      {
+        question: 'Do the QR codes expire?',
+        answer: 'No. The generated image encodes your data directly and never expires.',
+      },
+    ],
+    content: {
+      what: 'A QR Code Generator turns text or a link into a scannable QR code image you can print or share.',
+      how: 'The tool encodes your input into a QR matrix and renders it to a canvas entirely in your browser.',
+      steps: ['Enter text or a URL.', 'Adjust size if needed.', 'Download the PNG.'],
+      uses: ['Menus and flyers', 'Sharing Wi-Fi or links', 'Event tickets'],
+      tips: ['Keep the content short so the code stays easy to scan.'],
+    },
+  },
+  {
+    slug: 'loan-calculator',
+    name: 'Loan Calculator',
+    title: 'Loan Calculator',
+    description:
+      'Estimate monthly loan payments, total interest, and total cost for any loan.',
+    shortDescription: 'Estimate monthly payments and interest.',
+    category: 'finance-tools',
+    keywords: ['loan calculator', 'monthly payment', 'mortgage calculator', 'interest calculator'],
+    icon: 'Wallet',
+    featured: true,
+    popular: true,
+    relatedTools: ['percentage-calculator', 'bmi-calculator'],
+    metaTitle: 'Loan Calculator â€” Monthly Payment & Interest (Free)',
+    metaDescription:
+      'Calculate monthly loan payments, total interest, and total repayment for any loan amount, rate, and term. Free and instant.',
+    faq: [
+      {
+        question: 'How is the monthly payment calculated?',
+        answer:
+          'It uses the standard amortization formula based on your loan amount, annual interest rate, and term.',
+      },
+      {
+        question: 'Does it include taxes and fees?',
+        answer: 'No. It estimates principal and interest only â€” add other costs separately.',
+      },
+    ],
+    content: {
+      what: 'A Loan Calculator estimates what you will pay each month on a loan and how much interest you will pay over its lifetime.',
+      how: 'The tool applies the amortization formula using your principal, interest rate, and number of payments.',
+      steps: ['Enter the loan amount, rate, and term.', 'Review the monthly payment and totals.'],
+      uses: ['Car loans', 'Mortgages', 'Personal loans'],
+      tips: ['A shorter term means higher monthly payments but much less total interest.'],
+    },
+  },
+  {
+    slug: 'image-compressor',
+    name: 'Image Compressor',
+    title: 'Image Compressor',
+    description:
+      'Compress JPEG and WebP images to a smaller file size right in your browser.',
+    shortDescription: 'Shrink image file size without uploading.',
+    category: 'image-tools',
+    keywords: ['image compressor', 'compress image', 'reduce image size', 'shrink photo'],
+    icon: 'ImageDown',
+    featured: true,
+    popular: true,
+    relatedTools: ['image-resizer', 'image-format-converter'],
+    metaTitle: 'Image Compressor â€” Reduce Image File Size (Free)',
+    metaDescription:
+      'Compress JPEG and WebP images to a smaller file size instantly and privately in your browser. Free, no upload required.',
+    faq: [
+      {
+        question: 'Is my image uploaded to a server?',
+        answer: 'No. Compression happens entirely in your browser using the Canvas API â€” your image never leaves your device.',
+      },
+      {
+        question: 'Which formats can I compress to?',
+        answer: 'JPEG and WebP, since both support adjustable quality. PNG is lossless and does not use a quality setting.',
+      },
+    ],
+    content: {
+      what: 'An Image Compressor reduces an image file size by lowering its encoding quality, trading a small amount of visual detail for a much smaller file.',
+      how: 'The tool draws your image onto an in-memory canvas and re-encodes it at the quality level you choose using your browser\u2019s built-in image encoder.',
+      steps: ['Upload an image.', 'Pick JPEG or WebP and adjust the quality slider.', 'Download the compressed file.'],
+      uses: ['Speeding up website load times', 'Reducing email attachment size', 'Saving storage space'],
+      tips: ['WebP usually compresses smaller than JPEG at the same visual quality.'],
+    },
+  },
+  {
+    slug: 'image-resizer',
+    name: 'Image Resizer',
+    title: 'Image Resizer',
+    description:
+      'Resize an image to exact pixel dimensions, with an option to lock the aspect ratio.',
+    shortDescription: 'Resize images to exact dimensions.',
+    category: 'image-tools',
+    keywords: ['image resizer', 'resize image', 'change image dimensions', 'scale photo'],
+    icon: 'Scaling',
+    popular: true,
+    relatedTools: ['image-compressor', 'image-format-converter'],
+    metaTitle: 'Image Resizer â€” Resize Images Online (Free)',
+    metaDescription:
+      'Resize images to exact width and height, with an aspect-ratio lock, instantly and privately in your browser.',
+    faq: [
+      {
+        question: 'Does resizing reduce quality?',
+        answer: 'Scaling down generally looks sharp. Scaling up beyond the original size can look soft since no new detail is created.',
+      },
+      {
+        question: 'Can I resize without distorting the image?',
+        answer: 'Yes, turn on "Lock aspect ratio" so height updates automatically when you change the width, and vice versa.',
+      },
+    ],
+    content: {
+      what: 'An Image Resizer changes the pixel width and height of an image, either to fit a specific layout or to reduce file size.',
+      how: 'The tool draws your image onto a canvas sized to your target dimensions, letting the browser handle the scaling.',
+      steps: ['Upload an image.', 'Enter a new width or height.', 'Download the resized image.'],
+      uses: ['Preparing images for a website', 'Meeting upload size requirements', 'Creating thumbnails'],
+      tips: ['Keep the aspect ratio locked to avoid a stretched or squished result.'],
+    },
+  },
+  {
+    slug: 'image-format-converter',
+    name: 'Image Format Converter',
+    title: 'Image Format Converter',
+    description:
+      'Convert images between PNG, JPEG, and WebP formats instantly in your browser.',
+    shortDescription: 'Convert between PNG, JPEG, and WebP.',
+    category: 'image-tools',
+    keywords: ['image format converter', 'png to jpg', 'jpg to webp', 'convert image format'],
+    icon: 'RefreshCw',
+    popular: true,
+    relatedTools: ['image-compressor', 'image-resizer'],
+    metaTitle: 'Image Format Converter â€” PNG, JPEG & WebP (Free)',
+    metaDescription:
+      'Convert images between PNG, JPEG, and WebP formats instantly and privately in your browser. Free and unlimited.',
+    faq: [
+      {
+        question: 'Will converting to JPEG lose transparency?',
+        answer: 'Yes. JPEG does not support transparency, so any transparent areas will be filled in. Use PNG or WebP to keep transparency.',
+      },
+    ],
+    content: {
+      what: 'An Image Format Converter changes an image from one file format to another, such as PNG to WebP or JPEG to PNG.',
+      how: 'The tool draws your image onto a canvas and re-encodes it in the target format using your browser\u2019s built-in encoders.',
+      steps: ['Upload an image.', 'Choose the target format.', 'Download the converted file.'],
+      uses: ['Getting smaller WebP images for the web', 'Converting screenshots to PNG', 'Standardizing image formats'],
+      tips: ['WebP typically gives the best size-to-quality ratio for web use.'],
+    },
+  },
+  {
+    slug: 'image-to-base64',
+    name: 'Image to Base64 Converter',
+    title: 'Image to Base64 Converter',
+    description:
+      'Convert an image into a Base64-encoded data URL you can embed directly in HTML or CSS.',
+    shortDescription: 'Convert images to Base64 data URLs.',
+    category: 'image-tools',
+    keywords: ['image to base64', 'base64 image', 'data url', 'embed image html'],
+    icon: 'Binary',
+    relatedTools: ['base64-encoder', 'image-format-converter'],
+    metaTitle: 'Image to Base64 Converter â€” Get a Data URL (Free)',
+    metaDescription:
+      'Convert an image to a Base64-encoded data URL instantly and privately in your browser. Free developer tool.',
+    faq: [
+      {
+        question: 'What is a data URL used for?',
+        answer: 'A data URL embeds the image data directly in HTML, CSS, or JSON so it loads without a separate file request.',
+      },
+      {
+        question: 'Does this upload my image anywhere?',
+        answer: 'No, the file is read and encoded entirely in your browser.',
+      },
+    ],
+    content: {
+      what: 'An Image to Base64 Converter turns image bytes into a Base64 text string wrapped in a data: URL, which browsers can render directly.',
+      how: 'The tool reads the file with the browser\u2019s FileReader API and encodes it as a Base64 data URL.',
+      steps: ['Upload an image.', 'Copy the generated data URL.'],
+      uses: ['Inlining small icons in CSS', 'Embedding images in emails', 'Avoiding extra HTTP requests for tiny assets'],
+      tips: ['Base64 encoding adds about 33% to the file size â€” best for small images.'],
+    },
+  },
+  {
+    slug: 'favicon-generator',
+    name: 'Favicon Generator',
+    title: 'Favicon Generator',
+    description:
+      'Generate favicon images in every common size from a single square image.',
+    shortDescription: 'Create favicons in every size you need.',
+    category: 'image-tools',
+    keywords: ['favicon generator', 'create favicon', 'app icon generator', 'favicon sizes'],
+    icon: 'AppWindow',
+    featured: true,
+    relatedTools: ['image-resizer', 'image-format-converter'],
+    metaTitle: 'Favicon Generator â€” Create Favicons in All Sizes (Free)',
+    metaDescription:
+      'Upload one image and generate favicon PNGs in every common size for browsers, iOS, and Android. Free and instant.',
+    faq: [
+      {
+        question: 'What image should I upload?',
+        answer: 'A square image (ideally 512\u00d7512 or larger) works best so every generated size stays sharp.',
+      },
+      {
+        question: 'Which sizes are generated?',
+        answer: '16\u00d716 and 32\u00d732 for browser tabs, 48\u00d748 for Windows, 180\u00d7180 for Apple touch icons, and 192\u00d7192 / 512\u00d7512 for Android and PWAs.',
+      },
+    ],
+    content: {
+      what: 'A Favicon Generator produces the full set of small icon sizes browsers and devices expect, from one source image.',
+      how: 'The tool draws your image onto canvases at each target size and exports each as a downloadable PNG.',
+      steps: ['Upload a square image.', 'Download each generated size.', 'Add them to your site\u2019s HTML head.'],
+      uses: ['Setting up a new website', 'Adding a home-screen icon for a web app', 'Refreshing an outdated favicon'],
+      tips: ['Keep the design simple â€” favicons are viewed very small.'],
+    },
+  },
+  {
+    slug: 'merge-pdf',
+    name: 'Merge PDF',
+    title: 'Merge PDF Files',
+    description:
+      'Combine multiple PDF files into a single document, in the order you choose.',
+    shortDescription: 'Combine multiple PDFs into one.',
+    category: 'pdf-tools',
+    keywords: ['merge pdf', 'combine pdf', 'join pdf files', 'pdf merger'],
+    icon: 'Layers',
+    featured: true,
+    popular: true,
+    relatedTools: ['split-pdf', 'images-to-pdf'],
+    metaTitle: 'Merge PDF â€” Combine PDF Files Online (Free)',
+    metaDescription:
+      'Combine multiple PDF files into one document, in any order you choose, instantly and privately in your browser.',
+    faq: [
+      {
+        question: 'Are my files uploaded to a server?',
+        answer: 'No. Merging happens entirely in your browser â€” your PDFs never leave your device.',
+      },
+      {
+        question: 'Can I control the order of the merged pages?',
+        answer: 'Yes, reorder the files with the up and down arrows before merging.',
+      },
+    ],
+    content: {
+      what: 'A PDF merger combines two or more PDF files into a single document, keeping every page from each file.',
+      how: 'The tool reads each PDF you upload and copies its pages into one new PDF, in the order you set.',
+      steps: ['Upload two or more PDF files.', 'Reorder them if needed.', 'Click Merge and download the result.'],
+      uses: ['Combining scanned pages into one file', 'Assembling a report from separate sections', 'Merging invoices'],
+      tips: ['Drag files in one at a time if you need to check each one before merging.'],
+    },
+  },
+  {
+    slug: 'split-pdf',
+    name: 'Split PDF',
+    title: 'Split PDF',
+    description:
+      'Extract a page range from a PDF, or split every page into its own file.',
+    shortDescription: 'Extract pages or split a PDF apart.',
+    category: 'pdf-tools',
+    keywords: ['split pdf', 'extract pdf pages', 'separate pdf pages', 'pdf splitter'],
+    icon: 'Scissors',
+    popular: true,
+    relatedTools: ['merge-pdf', 'pdf-to-images'],
+    metaTitle: 'Split PDF â€” Extract or Separate Pages Online (Free)',
+    metaDescription:
+      'Extract a specific page range from a PDF or split it into individual single-page files, instantly and privately.',
+    faq: [
+      {
+        question: 'How do I specify which pages to extract?',
+        answer: 'Enter a range like 1-3,5,7-9 and only those pages will be included in the extracted PDF.',
+      },
+      {
+        question: 'Can I get every page as a separate file?',
+        answer: 'Yes, use "Split into single pages" to download each page as its own PDF.',
+      },
+    ],
+    content: {
+      what: 'A PDF splitter pulls specific pages out of a document, either as one smaller PDF or as individual single-page files.',
+      how: 'The tool copies the pages you select into new PDF documents, leaving the original file untouched.',
+      steps: ['Upload a PDF.', 'Enter a page range, or choose to split into single pages.', 'Download the result.'],
+      uses: ['Pulling one chapter out of a larger document', 'Removing a cover page', 'Sharing only relevant pages'],
+      tips: ['Page numbers start at 1, matching what you see in a PDF viewer.'],
+    },
+  },
+  {
+    slug: 'pdf-to-images',
+    name: 'PDF to Images',
+    title: 'PDF to Images',
+    description:
+      'Convert every page of a PDF into a downloadable PNG image.',
+    shortDescription: 'Turn PDF pages into PNG images.',
+    category: 'pdf-tools',
+    keywords: ['pdf to images', 'pdf to png', 'convert pdf to image', 'export pdf pages'],
+    icon: 'Images',
+    popular: true,
+    relatedTools: ['images-to-pdf', 'split-pdf'],
+    metaTitle: 'PDF to Images â€” Convert PDF Pages to PNG (Free)',
+    metaDescription:
+      'Convert every page of a PDF into a high-quality PNG image, instantly and privately in your browser.',
+    faq: [
+      {
+        question: 'What image format do I get?',
+        answer: 'Each page is exported as a PNG image, downloadable individually.',
+      },
+      {
+        question: 'Does image quality suffer?',
+        answer: 'Pages are rendered at 2x scale for a sharp result suitable for viewing and printing.',
+      },
+    ],
+    content: {
+      what: 'This tool renders each page of a PDF as an image, useful when you need pictures instead of a document.',
+      how: 'The tool draws each PDF page onto a canvas at high resolution and exports it as a PNG.',
+      steps: ['Upload a PDF.', 'Wait for each page to render.', 'Download the pages you need.'],
+      uses: ['Sharing a page as an image', 'Embedding a PDF page in a slide', 'Creating thumbnails of a document'],
+      tips: ['Large PDFs with many pages take longer to render â€” give it a moment.'],
+    },
+  },
+  {
+    slug: 'images-to-pdf',
+    name: 'Images to PDF',
+    title: 'Images to PDF',
+    description:
+      'Combine multiple JPEG or PNG images into a single PDF document.',
+    shortDescription: 'Combine images into one PDF.',
+    category: 'pdf-tools',
+    keywords: ['images to pdf', 'jpg to pdf', 'png to pdf', 'convert images to pdf'],
+    icon: 'FilePlus',
+    featured: true,
+    relatedTools: ['merge-pdf', 'pdf-to-images'],
+    metaTitle: 'Images to PDF â€” Combine JPG & PNG into a PDF (Free)',
+    metaDescription:
+      'Combine multiple JPEG or PNG images into a single PDF document, in any order, instantly and privately.',
+    faq: [
+      {
+        question: 'What image formats are supported?',
+        answer: 'JPEG and PNG images. Each image becomes one page in the resulting PDF.',
+      },
+      {
+        question: 'Can I reorder the images before creating the PDF?',
+        answer: 'Yes, use the up and down arrows to set the page order before generating the PDF.',
+      },
+    ],
+    content: {
+      what: 'This tool turns a set of images into a single PDF, with each image becoming its own page.',
+      how: 'The tool embeds each image into a new PDF page sized to match the image dimensions.',
+      steps: ['Upload your images.', 'Reorder them if needed.', 'Click Create PDF and download it.'],
+      uses: ['Turning scanned photos into a document', 'Bundling receipts into one file', 'Creating a simple photo PDF'],
+      tips: ['Upload images in the order you want them to appear â€” reordering afterward is easy too.'],
+    },
+  },
+  {
+    slug: 'rotate-pdf',
+    name: 'Rotate PDF',
+    title: 'Rotate PDF',
+    description:
+      'Rotate every page of a PDF by 90, 180, or 270 degrees.',
+    shortDescription: 'Rotate PDF pages to the right orientation.',
+    category: 'pdf-tools',
+    keywords: ['rotate pdf', 'rotate pdf pages', 'fix pdf orientation', 'turn pdf page'],
+    icon: 'RotateCw',
+    relatedTools: ['merge-pdf', 'split-pdf'],
+    metaTitle: 'Rotate PDF â€” Fix Page Orientation Online (Free)',
+    metaDescription:
+      'Rotate every page of a PDF 90, 180, or 270 degrees instantly and privately in your browser.',
+    faq: [
+      {
+        question: 'Does this rotate every page the same way?',
+        answer: 'Yes, the chosen rotation is applied to all pages in the document.',
+      },
+      {
+        question: 'Can I keep rotating until it looks right?',
+        answer: 'Yes, each click adds to the current rotation, so you can nudge it 90آ° at a time.',
+      },
+    ],
+    content: {
+      what: 'This tool changes the display orientation of every page in a PDF, useful for fixing sideways or upside-down scans.',
+      how: 'The tool sets a rotation angle on each page without re-rendering the content itself.',
+      steps: ['Upload a PDF.', 'Click Rotate left, right, or 180آ°.', 'Download the corrected PDF.'],
+      uses: ['Fixing a sideways-scanned document', 'Correcting a photo taken in the wrong orientation', 'Standardizing page orientation before printing'],
+      tips: ['Rotation is applied to all pages at once â€” split the PDF first if only some pages need it.'],
+    },
+  },
+  {
+    slug: 'meta-tags-generator',
+    name: 'Meta Tags Generator',
+    title: 'Meta Tags Generator',
+    description: 'Generate SEO-friendly HTML meta tags and preview them in search results.',
+    shortDescription: 'Generate and preview HTML meta tags.',
+    category: 'seo-tools',
+    keywords: ['meta tags', 'seo generator', 'open graph', 'search preview'],
+    icon: 'Search',
+    popular: true,
+    relatedTools: ['word-counter', 'character-counter'],
+    metaTitle: 'Meta Tags Generator â€” Create SEO Tags (Free)',
+    metaDescription: 'Generate SEO-friendly HTML meta tags for Title, Description, and Open Graph. Preview your site in Google search results.',
+    faq: [
+      {
+        question: 'What are Open Graph tags?',
+        answer: 'Open Graph tags allow you to control what content shows up when a page is shared on Facebook, Twitter, and other social media platforms.',
+      }
+    ],
+    content: {
+      what: 'A Meta Tags Generator helps you quickly create the essential HTML tags needed for Search Engine Optimization and social media sharing.',
+      how: 'It takes your input and formats it into standard HTML <meta> tags that you can copy and paste into your website\'s <head> section.',
+      steps: ['Fill in your site details.', 'Review the Google Search Preview.', 'Copy the generated HTML code.'],
+      uses: ['Improving SEO', 'Controlling social media link previews', 'Setting up a new website'],
+      tips: ['Keep your title under 60 characters and description under 160 characters for best results in Google.'],
+    },
+  },
+  {
+    slug: 'youtube-thumbnail-downloader',
+    name: 'YouTube Thumbnail Downloader',
+    title: 'YouTube Thumbnail Downloader',
+    description: 'Extract and download YouTube video thumbnails in high quality.',
+    shortDescription: 'Download YouTube thumbnails.',
+    category: 'social-media-tools',
+    keywords: ['youtube thumbnail', 'download thumbnail', 'youtube image extractor'],
+    icon: 'Youtube',
+    popular: true,
+    relatedTools: ['image-resizer', 'image-compressor'],
+    metaTitle: 'YouTube Thumbnail Downloader â€” Extract High Quality Images (Free)',
+    metaDescription: 'Extract and download YouTube video thumbnails in Max Resolution, HD, and SD instantly. Free online tool.',
+    faq: [
+      {
+        question: 'Can I download the highest quality thumbnail?',
+        answer: 'Yes, if the video creator uploaded a high-resolution thumbnail (Max Resolution), you can download it.',
+      }
+    ],
+    content: {
+      what: 'A YouTube Thumbnail Downloader allows you to extract the cover image of any public YouTube video in various resolutions.',
+      how: 'The tool extracts the video ID from your link and fetches the images directly from YouTube\'s image servers.',
+      steps: ['Paste a YouTube video URL.', 'Click Extract.', 'Download your preferred resolution.'],
+      uses: ['Getting inspiration for your own thumbnails', 'Using video thumbnails in blog posts or social media', 'Saving images for offline reference'],
+      tips: ['Not all videos have a "Max Resolution" thumbnail; in that case, fallback to High Quality (HD).'],
+    },
+  },
+  {
+    slug: 'pomodoro-timer',
+    name: 'Pomodoro Timer',
+    title: 'Pomodoro Timer',
+    description: 'A customizable timer for the Pomodoro technique to boost your productivity.',
+    shortDescription: 'Boost productivity with a Pomodoro timer.',
+    category: 'productivity-tools',
+    keywords: ['pomodoro timer', 'focus timer', 'productivity timer', 'study timer'],
+    icon: 'Timer',
+    featured: true,
+    popular: true,
+    relatedTools: ['gpa-calculator', 'timestamp-converter'],
+    metaTitle: 'Pomodoro Timer â€” Free Focus & Productivity Timer',
+    metaDescription: 'A free online Pomodoro timer to help you focus and get more done. Customize work and break intervals easily.',
+    faq: [
+      {
+        question: 'What is the Pomodoro technique?',
+        answer: 'It is a time management method that breaks work into intervals, typically 25 minutes in length, separated by short breaks.',
+      }
+    ],
+    content: {
+      what: 'The Pomodoro Timer helps you manage your time effectively by breaking work into focused sessions and scheduled breaks.',
+      how: 'It counts down your work and break intervals, automatically switching between them and sending browser notifications when time is up.',
+      steps: ['Adjust your work and break durations in Settings.', 'Click Start to begin focusing.', 'Take a break when the timer finishes.'],
+      uses: ['Studying for exams', 'Deep work sessions', 'Managing daily tasks'],
+      tips: ['Allow browser notifications so you don\'t miss the end of a session when the tab is in the background.'],
+    },
+  },
+  {
+    slug: 'gpa-calculator',
+    name: 'GPA Calculator',
+    title: 'GPA Calculator',
+    description: 'Calculate your Grade Point Average (GPA) easily for college or high school.',
+    shortDescription: 'Calculate your Grade Point Average.',
+    category: 'education-tools',
+    keywords: ['gpa calculator', 'grade calculator', 'college gpa', 'high school gpa'],
+    icon: 'GraduationCap',
+    popular: true,
+    relatedTools: ['pomodoro-timer', 'percentage-calculator'],
+    metaTitle: 'GPA Calculator â€” Calculate Your Grades Online (Free)',
+    metaDescription: 'Easily calculate your high school or college GPA. Add courses, credits, and grades to get your Grade Point Average instantly.',
+    faq: [
+      {
+        question: 'How is GPA calculated?',
+        answer: 'GPA is calculated by multiplying the grade points for each course by the course credits, summing them up, and dividing by the total credits.',
+      }
+    ],
+    content: {
+      what: 'A GPA Calculator helps students determine their Grade Point Average based on their course grades and credits.',
+      how: 'It uses a standard 4.0 scale to assign points to letter grades, then calculates the weighted average.',
+      steps: ['Add your courses.', 'Enter the credits and grade for each.', 'Click Calculate to see your GPA.'],
+      uses: ['Tracking academic progress', 'Estimating final semester GPA', 'Setting goals for upcoming classes'],
+      tips: ['You can leave the course names blank if you want to calculate quickly.'],
+    },
+  },
+  {
+    slug: 'prompt-generator',
+    name: 'Prompt Generator',
+    title: 'AI Prompt Generator',
+    description: 'Build optimized prompts for AI models like ChatGPT, Claude, and Midjourney.',
+    shortDescription: 'Build optimized AI prompts.',
+    category: 'ai-tools',
+    keywords: ['prompt generator', 'chatgpt prompt', 'ai prompt maker', 'midjourney prompt'],
+    icon: 'Sparkles',
+    featured: true,
+    popular: true,
+    relatedTools: ['lorem-ipsum-generator', 'text-case-converter'],
+    metaTitle: 'AI Prompt Generator â€” Create Optimized Prompts (Free)',
+    metaDescription: 'Generate optimized prompts for ChatGPT, Claude, Midjourney, and other AI models based on your specific use case and desired tone.',
+    faq: [
+      {
+        question: 'Does this generate the AI answer?',
+        answer: 'No, this tool generates the highly optimized *prompt* (the question/instruction) that you can copy and paste into your AI of choice.',
+      }
+    ],
+    content: {
+      what: 'The Prompt Generator helps you construct clear, detailed, and context-rich prompts to get the best possible results from AI tools.',
+      how: 'It uses proven prompt engineering templates for various use cases (Coding, Writing, Art) and combines them with your specific topic and tone.',
+      steps: ['Select your use case and desired tone.', 'Enter your topic and any context.', 'Click Generate Prompt and copy it to your AI tool.'],
+      uses: ['Writing better ChatGPT queries', 'Generating image prompts for Midjourney', 'Structuring complex coding requests'],
+      tips: ['The more specific context you provide, the better the resulting prompt (and AI output) will be.'],
+    },
+  },
+  // â”€â”€ Developer Tools â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  {
+    slug: 'jwt-decoder',
+    name: 'JWT Decoder',
+    title: 'JWT Decoder',
+    description: 'Decode JSON Web Tokens (JWT) to inspect their header and payload without a backend.',
+    shortDescription: 'Decode and inspect JWT tokens instantly.',
+    category: 'developer-tools',
+    keywords: ['jwt decoder', 'json web token', 'jwt parser', 'decode jwt', 'jwt inspector'],
+    icon: 'KeySquare',
+    popular: true,
+    relatedTools: ['base64-decoder', 'json-formatter'],
+    metaTitle: 'JWT Decoder â€” Inspect JSON Web Tokens Online (Free)',
+    metaDescription: 'Decode JSON Web Tokens (JWT) to view the header, payload and claims. Free, instant, and private â€” nothing leaves your browser.',
+    faq: [
+      { question: 'Is it safe to paste my JWT here?', answer: 'Yes. Decoding is done entirely in your browser â€” the token is never sent to any server.' },
+      { question: 'Does it verify the signature?', answer: 'No. This tool only decodes (reads) the header and payload. Signature verification requires the secret key.' },
+    ],
+    content: {
+      what: 'A JWT Decoder reads the Base64-encoded header and payload of a JSON Web Token so you can inspect the claims without needing the secret key.',
+      how: 'The tool splits the token on dots, Base64-decodes the first two parts, and pretty-prints the JSON.',
+      steps: ['Paste your JWT token.', 'Inspect the decoded Header and Payload sections.'],
+      uses: ['Debugging authentication issues', 'Inspecting API tokens', 'Verifying token claims during development'],
+    },
+  },
+  {
+    slug: 'css-gradient-generator',
+    name: 'CSS Gradient Generator',
+    title: 'CSS Gradient Generator',
+    description: 'Visually build linear and radial CSS gradients and copy the ready-to-use CSS code.',
+    shortDescription: 'Build CSS gradients visually and copy the code.',
+    category: 'developer-tools',
+    keywords: ['css gradient generator', 'linear gradient', 'radial gradient', 'css background'],
+    icon: 'Paintbrush',
+    featured: true,
+    relatedTools: ['color-converter', 'color-palette-generator'],
+    metaTitle: 'CSS Gradient Generator â€” Build Gradients Online (Free)',
+    metaDescription: 'Create beautiful linear and radial CSS gradients with a live preview. Copy the ready-to-use CSS code instantly. Free and private.',
+    faq: [
+      { question: 'What types of gradients are supported?', answer: 'Linear gradients (with 8 direction options) and radial gradients.' },
+    ],
+    content: {
+      what: 'A CSS Gradient Generator lets you visually design a color gradient and get the CSS background property code ready to paste into your stylesheet.',
+      how: 'Pick your colors and direction, and the tool builds the CSS gradient string in real time.',
+      steps: ['Choose gradient type and direction.', 'Pick your two colors.', 'Copy the CSS code.'],
+      uses: ['Web design backgrounds', 'Button and card styling', 'Hero section designs'],
+      tips: ['Use HSL colors for easier fine-tuning of lightness and saturation.'],
+    },
+  },
+  {
+    slug: 'regex-tester',
+    name: 'Regex Tester',
+    title: 'Regular Expression Tester',
+    description: 'Write and test regular expressions against a string, with live match highlighting.',
+    shortDescription: 'Test regex patterns with live highlighting.',
+    category: 'developer-tools',
+    keywords: ['regex tester', 'regular expression', 'regex tool', 'pattern match'],
+    icon: 'Regex',
+    popular: true,
+    relatedTools: ['json-formatter', 'diff-checker'],
+    metaTitle: 'Regex Tester â€” Test Regular Expressions Online (Free)',
+    metaDescription: 'Write regular expressions and test them against a string with live match highlighting. Free, instant, and private.',
+    faq: [
+      { question: 'Which regex flavour is used?', answer: 'JavaScript\'s built-in RegExp engine, which is compatible with most modern regex patterns.' },
+      { question: 'How do I test a case-insensitive match?', answer: 'Add the "i" flag in the flags input next to the pattern.' },
+    ],
+    content: {
+      what: 'A Regex Tester lets you write a regular expression and see which parts of a test string it matches, highlighted in real time.',
+      how: 'The tool compiles your pattern using the JavaScript RegExp engine and highlights every match in the test string.',
+      steps: ['Enter your pattern in the "/" input.', 'Set any flags (e.g. "g", "i").', 'Edit the test string to see matches highlighted.'],
+      uses: ['Validating email and phone formats', 'Parsing log files', 'Building search/replace patterns'],
+      tips: ['Use the "g" flag to find all matches, not just the first one.'],
+    },
+  },
+  {
+    slug: 'markdown-to-html',
+    name: 'Markdown to HTML',
+    title: 'Markdown to HTML Converter',
+    description: 'Convert Markdown to HTML with a live side-by-side preview.',
+    shortDescription: 'Convert Markdown to HTML with live preview.',
+    category: 'developer-tools',
+    keywords: ['markdown to html', 'md to html', 'markdown converter', 'markdown renderer'],
+    icon: 'FileCode',
+    relatedTools: ['json-formatter', 'slug-generator'],
+    metaTitle: 'Markdown to HTML â€” Convert Markdown Online (Free)',
+    metaDescription: 'Write Markdown and instantly see the rendered HTML preview and raw HTML code. Free, private, and client-side.',
+    faq: [
+      { question: 'Does it support GitHub Flavored Markdown?', answer: 'Yes, the underlying "marked" library supports GFM including tables, strikethrough, and task lists.' },
+    ],
+    content: {
+      what: 'A Markdown to HTML converter renders your Markdown text as an HTML page and gives you the raw HTML code to copy.',
+      how: 'The tool uses the "marked" library to parse your Markdown and display the HTML output and preview side by side.',
+      steps: ['Write or paste Markdown.', 'See the live HTML preview.', 'Copy the raw HTML code.'],
+      uses: ['Converting README files to HTML', 'Preparing blog post content', 'Generating email HTML from Markdown'],
+      tips: ['Use triple backticks for fenced code blocks with syntax highlighting.'],
+    },
+  },
+  // â”€â”€ Text Tools â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  {
+    slug: 'diff-checker',
+    name: 'Diff Checker',
+    title: 'Text Diff Checker',
+    description: 'Compare two texts side by side and see exactly which lines were added or removed.',
+    shortDescription: 'Compare two texts and spot the differences.',
+    category: 'text-tools',
+    keywords: ['diff checker', 'text compare', 'compare text', 'find differences', 'text diff'],
+    icon: 'GitCompare',
+    popular: true,
+    relatedTools: ['word-counter', 'slug-generator'],
+    metaTitle: 'Diff Checker â€” Compare Two Texts Online (Free)',
+    metaDescription: 'Paste two texts and instantly see line-by-line differences highlighted in green and red. Free, private, and client-side.',
+    faq: [
+      { question: 'Is my text sent to a server?', answer: 'No. The comparison runs entirely in your browser.' },
+    ],
+    content: {
+      what: 'A Diff Checker compares two pieces of text and highlights the lines that were added, removed, or unchanged.',
+      how: 'The tool splits each text into lines and compares them one by one, colouring additions green and removals red.',
+      steps: ['Paste the original text on the left.', 'Paste the changed text on the right.', 'Review the colour-coded differences.'],
+      uses: ['Comparing two versions of code', 'Reviewing document changes', 'Spotting errors in configuration files'],
+      tips: ['Great for comparing two JSON responses to find unexpected differences.'],
+    },
+  },
+  {
+    slug: 'slug-generator',
+    name: 'Slug Generator',
+    title: 'URL Slug Generator',
+    description: 'Convert any title or text into a clean, URL-friendly slug.',
+    shortDescription: 'Convert titles into URL-friendly slugs.',
+    category: 'text-tools',
+    keywords: ['slug generator', 'url slug', 'permalink generator', 'seo url'],
+    icon: 'Link2',
+    relatedTools: ['meta-tags-generator', 'word-counter'],
+    metaTitle: 'Slug Generator â€” Create URL-Friendly Slugs (Free)',
+    metaDescription: 'Convert any title or text into a lowercase, hyphenated URL slug instantly. Free and private.',
+    faq: [
+      { question: 'What characters are removed?', answer: 'Special characters, punctuation, and extra spaces are stripped. Words are joined with a dash or underscore.' },
+    ],
+    content: {
+      what: 'A Slug Generator converts human-readable text into a URL-safe string, replacing spaces with dashes and removing special characters.',
+      how: 'The tool lowercases your text, strips non-word characters, and joins words with your chosen separator.',
+      steps: ['Enter your title.', 'Choose a separator (dash or underscore).', 'Copy the generated slug.'],
+      uses: ['Creating blog post URLs', 'Naming product pages', 'Building clean SEO permalinks'],
+      tips: ['Shorter slugs are better for SEO â€” try to keep them under 60 characters.'],
+    },
+  },
+  // â”€â”€ Image Tools â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  {
+    slug: 'color-palette-generator',
+    name: 'Color Palette Generator',
+    title: 'Color Palette Generator',
+    description: 'Generate complementary, analogous, triadic, and shade palettes from a base color.',
+    shortDescription: 'Generate harmonious color palettes from any color.',
+    category: 'image-tools',
+    keywords: ['color palette generator', 'color scheme', 'complementary colors', 'analogous colors'],
+    icon: 'Swatch',
+    featured: true,
+    popular: true,
+    relatedTools: ['color-converter', 'css-gradient-generator'],
+    metaTitle: 'Color Palette Generator â€” Create Color Schemes (Free)',
+    metaDescription: 'Pick a base color and instantly generate complementary, analogous, triadic, and shade palettes. Click any swatch to copy its hex code.',
+    faq: [
+      { question: 'What palette types are generated?', answer: 'Complementary, Analogous, Triadic, and Shades â€” all calculated from your base color.' },
+      { question: 'How do I copy a color?', answer: 'Click any color swatch to copy its hex code to the clipboard.' },
+    ],
+    content: {
+      what: 'A Color Palette Generator creates a set of harmonious colors from your base color using established color theory relationships.',
+      how: 'The tool converts your hex color to HSL, then rotates the hue and adjusts lightness to calculate each palette type.',
+      steps: ['Pick or enter a base color.', 'Browse the generated palette types.', 'Click any swatch to copy its hex code.'],
+      uses: ['Choosing a brand color scheme', 'Designing UI themes', 'Finding accent colors for a design'],
+      tips: ['The "Shades" palette is great for creating light and dark variants of a single brand color.'],
+    },
+  },
+  {
+    slug: 'svg-optimizer',
+    name: 'SVG Optimizer',
+    title: 'SVG Optimizer',
+    description: 'Minify and clean SVG code by removing comments and collapsing whitespace.',
+    shortDescription: 'Minify SVG code to reduce file size.',
+    category: 'image-tools',
+    keywords: ['svg optimizer', 'svgo', 'minify svg', 'compress svg', 'clean svg'],
+    icon: 'Code',
+    relatedTools: ['image-compressor', 'css-gradient-generator'],
+    metaTitle: 'SVG Optimizer â€” Minify & Clean SVG Code (Free)',
+    metaDescription: 'Remove comments and collapse whitespace in your SVG code to reduce file size. Free, private, and instant.',
+    faq: [
+      { question: 'Does it change the visual output of my SVG?', answer: 'No. It only removes whitespace and comments which do not affect rendering.' },
+    ],
+    content: {
+      what: 'An SVG Optimizer strips unnecessary whitespace and comments from an SVG file to reduce its size without changing how it looks.',
+      how: 'The tool applies a series of regex transformations to remove comments, collapse whitespace between tags, and trim operators.',
+      steps: ['Paste your SVG code.', 'See the optimized output and size savings.', 'Copy the result.'],
+      uses: ['Reducing SVG icon file sizes', 'Cleaning up exported SVGs from Figma or Illustrator', 'Inlining SVGs more efficiently in HTML'],
+    },
+  },
+  {
+    slug: 'image-converter',
+    name: 'Image Converter',
+    title: 'Image Format Converter',
+    description: 'Convert images between WebP, PNG, and JPG formats locally in your browser.',
+    shortDescription: 'Convert images to WebP, PNG, or JPG.',
+    category: 'image-tools',
+    keywords: ['image converter', 'webp converter', 'png to webp', 'jpg to webp', 'convert image'],
+    icon: 'Image',
+    popular: true,
+    relatedTools: ['svg-optimizer', 'color-palette-generator'],
+    metaTitle: 'Image Converter — Convert to WebP, PNG, JPG (Free)',
+    metaDescription: 'Convert images between WebP, PNG, and JPEG instantly. 100% private, no uploads, works offline.',
+    faq: [
+      { question: 'Are my images uploaded to a server?', answer: 'No! The conversion uses your browser\'s native Canvas API. Your images never leave your device.' },
+      { question: 'Why convert to WebP?', answer: 'WebP provides superior compression, making your website load faster while maintaining image quality.' },
+    ],
+    content: {
+      what: 'An Image Converter transforms your pictures from one file format (like JPG or PNG) to another (like the highly optimized WebP format).',
+      how: 'The tool loads your image into an invisible HTML Canvas element, then exports the canvas data into your desired file format.',
+      steps: ['Drag and drop your image into the dropzone.', 'Select your desired output format.', 'Click Convert and download your new image.'],
+      uses: ['Optimizing images for websites (converting to WebP)', 'Removing transparency by converting PNG to JPG', 'Standardizing user uploads'],
+      tips: ['Converting PNG to WebP can sometimes reduce file sizes by up to 80% with no noticeable quality loss!'],
+    },
+  },
+  // â”€â”€ Generators â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  {
+    slug: 'fake-data-generator',
+    name: 'Fake Data Generator',
+    title: 'Fake Data Generator',
+    description: 'Generate mock names, emails, phone numbers, and addresses for testing and demos.',
+    shortDescription: 'Generate realistic fake data for testing.',
+    category: 'generators',
+    keywords: ['fake data generator', 'mock data', 'test data', 'dummy data', 'random data'],
+    icon: 'UserRound',
+    popular: true,
+    relatedTools: ['uuid-generator', 'random-number-generator'],
+    metaTitle: 'Fake Data Generator â€” Generate Mock Test Data (Free)',
+    metaDescription: 'Generate realistic fake names, emails, phone numbers, and addresses for testing and prototyping. Export as a table or JSON.',
+    faq: [
+      { question: 'How many records can I generate?', answer: 'Up to 50 records at a time.' },
+      { question: 'Can I export as JSON?', answer: 'Yes, switch to the JSON view and copy the output.' },
+    ],
+    content: {
+      what: 'A Fake Data Generator creates realistic-looking but entirely fictional personal data for use in testing, demos, and prototypes.',
+      how: 'The tool randomly combines first names, last names, domains, street names, and cities to generate plausible-looking mock profiles.',
+      steps: ['Choose how many records to generate.', 'Click Regenerate for a fresh batch.', 'Switch between Table and JSON views.'],
+      uses: ['Populating a test database', 'UI mockups with realistic data', 'QA testing without real user data'],
+      tips: ['Copy as JSON to paste directly into database seed files or API mocking tools.'],
+    },
+  },
+  // â”€â”€ Finance Tools â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  {
+    slug: 'salary-calculator',
+    name: 'Salary Calculator',
+    title: 'Salary Calculator',
+    description: 'Convert between hourly, daily, weekly, monthly, and annual salary amounts.',
+    shortDescription: 'Convert wages between all pay periods.',
+    category: 'finance-tools',
+    keywords: ['salary calculator', 'hourly to annual', 'annual to hourly', 'wage converter', 'pay calculator'],
+    icon: 'Banknote',
+    popular: true,
+    relatedTools: ['loan-calculator', 'percentage-calculator'],
+    metaTitle: 'Salary Calculator â€” Convert Wages Between Pay Periods (Free)',
+    metaDescription: 'Convert your salary between hourly, daily, weekly, monthly, and annual rates. Supports multiple currencies. Free and instant.',
+    faq: [
+      { question: 'How is the monthly salary calculated?', answer: 'It assumes 4.333 weeks per month (52 weeks أ· 12 months) for accuracy.' },
+      { question: 'Can I change hours per day and days per week?', answer: 'Yes â€” both are configurable to match your actual working schedule.' },
+    ],
+    content: {
+      what: 'A Salary Calculator converts a pay amount from one pay period to all other common periods: hourly, daily, weekly, monthly, and annual.',
+      how: 'The tool first converts your input to an hourly rate, then multiplies by hours per day, days per week, and weeks per period.',
+      steps: ['Enter your pay amount.', 'Select your pay period.', 'Adjust hours per day and days per week if needed.', 'Read all converted rates.'],
+      uses: ['Comparing job offers with different pay structures', 'Understanding your true hourly rate', 'Financial planning and budgeting'],
+      tips: ['The selected pay period is highlighted with a ring so you can always identify your source value.'],
+    },
+  },
+  {
+    slug: 'utm-builder',
+    name: 'UTM Link Builder',
+    title: 'UTM Campaign Link Builder',
+    description: 'Easily build tracking URLs for your marketing campaigns with UTM parameters.',
+    shortDescription: 'Build tracking URLs for marketing campaigns.',
+    category: 'generators',
+    keywords: ['utm builder', 'campaign url builder', 'utm parameters', 'google analytics utm', 'marketing tracking'],
+    icon: 'Link',
+    popular: true,
+    relatedTools: ['url-encoder', 'slug-generator'],
+    metaTitle: 'UTM Link Builder — Campaign URL Builder Online (Free)',
+    metaDescription: 'Generate custom campaign tracking URLs with UTM parameters for Google Analytics. Fast, free, and completely private.',
+    faq: [
+      { question: 'What are UTM parameters?', answer: 'UTM parameters are tags added to a URL to track the effectiveness of online marketing campaigns across traffic sources.' },
+      { question: 'Are all fields required?', answer: 'Only the Website URL, Campaign Source, and Campaign Medium are typically required by analytics platforms.' },
+    ],
+    content: {
+      what: 'A UTM Link Builder creates tracking URLs that append specific campaign data (source, medium, name, etc.) to your website links.',
+      how: 'The tool takes your inputs, properly URL-encodes them, and concatenates them into a standard query string format.',
+      steps: ['Enter your base website URL.', 'Fill in the campaign source (e.g., google, newsletter).', 'Add medium and campaign name.', 'Copy the generated link.'],
+      uses: ['Tracking email marketing clicks', 'Measuring social media ad performance', 'Creating distinct links for affiliate tracking'],
+      tips: ['Use consistent lowercase naming conventions for your UTM parameters to keep your analytics data clean.'],
+    },
+  },
+  {
+    slug: 'sql-formatter',
+    name: 'SQL Formatter',
+    title: 'SQL Formatter & Beautifier',
+    description: 'Format and beautify unreadable SQL queries into a clean, well-indented layout.',
+    shortDescription: 'Format and beautify SQL queries.',
+    category: 'developer-tools',
+    keywords: ['sql formatter', 'sql beautifier', 'format sql', 'clean sql query'],
+    icon: 'Database',
+    popular: true,
+    relatedTools: ['json-formatter', 'regex-tester'],
+    metaTitle: 'SQL Formatter — Beautify SQL Queries Online (Free)',
+    metaDescription: 'Format and beautify your raw, messy SQL queries instantly in your browser. Supports multiple SQL dialects. Free and secure.',
+    faq: [
+      { question: 'Does this execute the SQL?', answer: 'No, this tool only formats the text. It does not connect to any database.' },
+      { question: 'What SQL dialects are supported?', answer: 'It supports Standard SQL, PostgreSQL, MySQL, MariaDB, SQLite, and more.' },
+    ],
+    content: {
+      what: 'An SQL Formatter takes a single-line or poorly formatted SQL query and restructures it with proper indentation and line breaks.',
+      how: 'It parses the SQL syntax using the sql-formatter library and applies standard formatting rules like uppercasing keywords and indenting clauses.',
+      steps: ['Paste your messy SQL query.', 'Select your SQL dialect if needed.', 'Click Format and copy the beautiful output.'],
+      uses: ['Reading complex JOIN queries', 'Standardizing code for pull requests', 'Debugging long auto-generated SQL strings'],
+      tips: ['Formatting your SQL before sharing it makes it significantly easier for other developers to read and review.'],
+    },
+  }
+]
+
+export const toolMap: Record<string, Tool> = Object.fromEntries(
+  tools.map((t) => [t.slug, t]),
+)
