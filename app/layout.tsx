@@ -28,8 +28,7 @@ export const metadata: Metadata = {
   },
   other: {
     'monetag': 'af842e13236d4f2527f7638dea7ea7e9',
-    },
-};
+  },
   description: SITE.description,
   applicationName: SITE.name,
   keywords: [
@@ -42,6 +41,7 @@ export const metadata: Metadata = {
     'converters',
     'generators',
   ],
+};
  generator: "ToolNova",
   alternates: {
     canonical: '/',
