@@ -26,6 +26,10 @@ export const metadata: Metadata = {
     default: `${SITE.name} — Free Online Tools for Everyday Tasks`,
     template: `%s | ${SITE.name}`,
   },
+  other: {
+    'monetag': 'af842e13236d4f2527f7638dea7ea7e9',
+    },
+};
   description: SITE.description,
   applicationName: SITE.name,
   keywords: [
