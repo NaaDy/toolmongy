@@ -41,8 +41,7 @@ export const metadata: Metadata = {
     'converters',
     'generators',
   ],
-};
- generator: "ToolNova",
+  generator: "ToolNova",
   alternates: {
     canonical: '/',
   },
