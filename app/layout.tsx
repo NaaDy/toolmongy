@@ -88,6 +88,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark ${geistSans.variable} ${geistMono.variable} bg-background`} suppressHydrationWarning>
+      <head>
+        <meta name="monetag" content="af842e13236d4f2527f7638dea7ea7e9" />
+      </head>
       <body className="min-h-screen font-sans antialiased flex flex-col lg:flex-row bg-background">
         <WebsiteJsonLd />
         <AppSidebar />
