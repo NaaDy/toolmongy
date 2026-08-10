@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Toolmongy",
-  url: "https://toolmongy.com", // هنغيره للدومين الحقيقي بعد الشراء
+  url: "https://toolmongy.store", // تم تغييره للدومين الجديد
   description:
     "Free online tools for developers, creators, students, marketers, and businesses. Fast, secure, and privacy-friendly.",
   tagline: "100+ Free Online Tools",
